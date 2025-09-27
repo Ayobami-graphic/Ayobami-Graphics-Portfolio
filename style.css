@@ -397,18 +397,19 @@ header .btn {
 .slider-container img {
   width: 600px;       /* Fix width */
   height: 850px;      /* Fix height */
-  object-fit: cover;  /* Fill space without distortion */
+object-fit: scale-down;  /* Fill space without distortion */
   flex: 0 0 100%;
   border-radius: 10px;
 }
 
 /* Prev/Next Buttons */
-.prev,
-.next {
+.prev
+{
   position: absolute;
   top: 50%;
+  opacity: 0;
   transform: translateY(-50%);
-  background: rgba(0,0,0,0.5);
+  background: rgba(0,0,0,0.0);
   color: #fff;
   border: none;
   padding: 12px 16px;
@@ -418,9 +419,27 @@ header .btn {
   transition: background 0.3s;
 }
 
-.prev:hover,
+.next {
+  position: absolute;
+ top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.1);
+  color: #fff;
+  border: none;
+  padding: 12px 16px;
+  cursor: pointer;
+  border-radius: 50%;
+  font-size: 20px;
+  transition: background 0.9s;
+}
+
+.prev:hover
+{
+  background: rgba(0,0,0,0.0);
+}
+
 .next:hover {
-  background: rgba(0,0,0,0.8);
+  background: rgba(0,0,0,0.5);
 }
 
 .prev {
@@ -463,6 +482,7 @@ header .btn {
   width: 100%;
   flex: 0 0 100%;
   border-radius: 12px;
+  object-fit: scale-down;
 }
 
   
@@ -581,10 +601,17 @@ footer {
     text-align: center;
     padding: 40px 20px;
   }
-
+  .hero .intro {
+    text-align: left;
+  }
   .hero-img img {
     margin-top: 30px;
   }
+
+  .hero .intro h1{
+   font-size: 24px;
+  }
+
   .slider-wrapper {
     width: 90%;
     height: auto;
